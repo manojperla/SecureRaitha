@@ -1,0 +1,87 @@
+[
+  {
+    "id": "ai.prompt-injection.retrieved-tool-instruction",
+    "title": "Untrusted retrieval triggers an agent tool",
+    "category": "ai",
+    "tags": [
+      "prompt-injection"
+    ],
+    "difficulty": "beginner",
+    "kind": "synthetic",
+    "runtime": "docker-compose",
+    "port": 8104,
+    "protocol": "http",
+    "resources": {
+      "memory_mb": 128
+    },
+    "external_dependencies": [],
+    "simulation": true,
+    "path": "labs/ai/prompt-injection/retrieved-tool-instruction"
+  },
+  {
+    "id": "api.broken-object-authorization.cross-owner-document",
+    "title": "Cross-owner document access",
+    "category": "api",
+    "tags": [
+      "broken-object-authorization"
+    ],
+    "difficulty": "beginner",
+    "kind": "synthetic",
+    "runtime": "docker-compose",
+    "port": 8102,
+    "protocol": "http",
+    "resources": {
+      "memory_mb": 128
+    },
+    "external_dependencies": [],
+    "simulation": false,
+    "cwe": [
+      "CWE-639"
+    ],
+    "path": "labs/api/broken-object-authorization/cross-owner-document"
+  },
+  {
+    "id": "network.insecure-service-config.exposed-admin-protocol",
+    "title": "Unauthenticated TCP configuration access",
+    "category": "network",
+    "tags": [
+      "insecure-service-config"
+    ],
+    "difficulty": "beginner",
+    "kind": "synthetic",
+    "runtime": "docker-compose",
+    "port": 8103,
+    "protocol": "tcp",
+    "resources": {
+      "memory_mb": 128
+    },
+    "external_dependencies": [],
+    "simulation": false,
+    "cwe": [
+      "CWE-306"
+    ],
+    "path": "labs/network/insecure-service-config/exposed-admin-protocol"
+  },
+  {
+    "id": "web.sql-injection.basic-login-bypass",
+    "title": "SQL injection in a login form",
+    "category": "web",
+    "tags": [
+      "sql-injection"
+    ],
+    "difficulty": "beginner",
+    "kind": "synthetic",
+    "runtime": "docker-compose",
+    "port": 8101,
+    "protocol": "http",
+    "resources": {
+      "memory_mb": 128
+    },
+    "external_dependencies": [],
+    "simulation": false,
+    "cwe": [
+      "CWE-89"
+    ],
+    "path": "labs/web/sql-injection/basic-login-bypass"
+  }
+]

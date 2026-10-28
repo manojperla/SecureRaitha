@@ -1,0 +1,21 @@
+{
+  "id": "web.sql-injection.basic-login-bypass",
+  "title": "SQL injection in a login form",
+  "category": "web",
+  "tags": [
+    "sql-injection"
+  ],
+  "difficulty": "beginner",
+  "kind": "synthetic",
+  "runtime": "docker-compose",
+  "port": 8101,
+  "protocol": "http",
+  "resources": {
+    "memory_mb": 128
+  },
+  "external_dependencies": [],
+  "simulation": false,
+  "cwe": [
+    "CWE-89"
+  ]
+}

@@ -1,0 +1,6 @@
+FROM python:3.12-slim
+WORKDIR /lab
+COPY tooling/target.py /lab/target.py
+USER 65534:65534
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 LAB_HOST=0.0.0.0 LAB_PORT=8080
+CMD ["python", "target.py"]

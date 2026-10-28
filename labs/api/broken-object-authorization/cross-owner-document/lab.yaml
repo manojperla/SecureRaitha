@@ -1,0 +1,21 @@
+{
+  "id": "api.broken-object-authorization.cross-owner-document",
+  "title": "Cross-owner document access",
+  "category": "api",
+  "tags": [
+    "broken-object-authorization"
+  ],
+  "difficulty": "beginner",
+  "kind": "synthetic",
+  "runtime": "docker-compose",
+  "port": 8102,
+  "protocol": "http",
+  "resources": {
+    "memory_mb": 128
+  },
+  "external_dependencies": [],
+  "simulation": false,
+  "cwe": [
+    "CWE-639"
+  ]
+}

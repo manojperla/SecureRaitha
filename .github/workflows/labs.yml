@@ -1,0 +1,31 @@
+name: Verify labs
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify target behavior
+        run: python -m unittest discover -s tests -v
+      - name: Check generated catalog
+        run: |
+          python lab.py catalog
+          git diff --exit-code -- catalog.yaml
+      - name: Verify Compose deployments and fixed variants
+        shell: bash
+        run: |
+          set -euo pipefail
+          for id in $(python -c 'from lab import catalog; print(" ".join(x["id"] for x in catalog()))'); do
+            trap 'python lab.py down "$id" --purge' EXIT
+            python lab.py up "$id"
+            python lab.py verify "$id"
+            python lab.py up "$id" --fixed
+            python lab.py verify "$id" --fixed
+            python lab.py down "$id" --purge
+            trap - EXIT
+          done

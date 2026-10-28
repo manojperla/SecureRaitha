@@ -1,0 +1,21 @@
+{
+  "id": "network.insecure-service-config.exposed-admin-protocol",
+  "title": "Unauthenticated TCP configuration access",
+  "category": "network",
+  "tags": [
+    "insecure-service-config"
+  ],
+  "difficulty": "beginner",
+  "kind": "synthetic",
+  "runtime": "docker-compose",
+  "port": 8103,
+  "protocol": "tcp",
+  "resources": {
+    "memory_mb": 128
+  },
+  "external_dependencies": [],
+  "simulation": false,
+  "cwe": [
+    "CWE-306"
+  ]
+}

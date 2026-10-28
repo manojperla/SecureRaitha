@@ -1,0 +1,18 @@
+{
+  "id": "ai.prompt-injection.retrieved-tool-instruction",
+  "title": "Untrusted retrieval triggers an agent tool",
+  "category": "ai",
+  "tags": [
+    "prompt-injection"
+  ],
+  "difficulty": "beginner",
+  "kind": "synthetic",
+  "runtime": "docker-compose",
+  "port": 8104,
+  "protocol": "http",
+  "resources": {
+    "memory_mb": 128
+  },
+  "external_dependencies": [],
+  "simulation": true
+}

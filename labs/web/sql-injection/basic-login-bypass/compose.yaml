@@ -1,0 +1,19 @@
+services:
+  target:
+    build:
+      context: ../../../..
+      dockerfile: tooling/Dockerfile
+    environment:
+      LAB_KIND: web
+      LAB_FIXED: "${LAB_FIXED:-0}"
+    ports:
+      - "127.0.0.1:8101:8080"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 128m
+    pids_limit: 64
+    networks: [lab]
+networks:
+  lab:
+    internal: true
